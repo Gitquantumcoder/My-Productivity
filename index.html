@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Productivity</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stars.css">
+  <link rel="stylesheet" href="alarm.css">
+  <link rel="stylesheet" href="clock_animaton.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+    <div class="shadow-dance-container">
+    <h1 class="shadow-dance-text">MY PRODUCTIVITY</h1>
+    </div>
+
+  <div class="container">
+
+    <!-- To-Do List -->
+    <div class="card" id="todo">
+      <h2 id="one">✅ To-Do List</h2>
+      <div class="todo-input">
+        <input type="text" id="new-task" placeholder="Add a task...">
+        <button id="add-task">Add +</button>
+      </div>
+      <ul id="todo-list">
+        <!-- Tasks will go here -->
+      </ul>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card" id="calculator">
+      <h2 id="two">🧮 Calculator</h2>
+      <div class="calculator">
+        <input type="text" id="calc-display" disabled>
+        <button>(</button>  <button>)</button>  <button>%</button>  <button>AC</button>
+        <button>7</button>  <button>8</button>  <button>9</button>  <button>*</button>
+        <button>4</button>  <button>5</button>  <button>6</button>  <button>/</button>
+        <button>1</button>  <button>2</button>  <button>3</button>  <button>-</button>
+        <button>.</button>  <button>0</button>  <button>=</button>  <button>+</button>  
+      </div>
+    </div>
+
+    <!-- Alarm Clock -->
+    <div class="card" id="clock">
+      <h3>⏰ Alarm Clock</h3>
+      <div class="alarm-display" id="clock-display">00:00:00</div>
+      <div class="alarm-set">
+        <input type="time" id="alarm-time">
+        <button id="set-alarm">Set Alarm</button>
+      </div>
+
+      <!-- Clock face with progress ring -->
+      <div class="clock-container">
+      <svg class="progress-ring" width="240" height="240">
+        <circle class="progress" id="progress-circle" cx="120" cy="120" r="110"></circle>
+      </svg>
+
+      <div class="clock-face">
+        <div class="ring" id="ringO"></div>
+        <div  class="ring" id="ringI"></div>
+        <div class="hand" id="handH"></div>
+        <div class="hand" id="handM"></div>
+        <div class="hand" id="handS"></div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+<script defer src="todo.js"></script>
+<script defer src="alarm.js"></script>
+<script defer src="calc.js"></script>
+</body>
+</html>

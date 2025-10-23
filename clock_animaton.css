@@ -1,0 +1,114 @@
+/* === Clock container with progress ring === */
+.clock-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin:2.5rem;
+}
+
+/* === SVG Circular Progress Bar === */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress {
+  fill: none;
+  stroke: #ffffff98;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 690;
+  stroke-dashoffset: 690;
+  /*filter: drop-shadow(0 0 10px #d94a90) drop-shadow(0 0 20px #d94a90);-----for glow of pogress bar*/
+  transition: stroke-dashoffset 0.2s linear;
+}
+
+/* === Clock Face === */
+.clock-face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,74,144,0.08) 0%, rgba(0,0,0,0.9) 100%);
+  box-shadow: 0 0 30px rgba(217,74,144,0.4), inset 0 0 40px rgba(217,74,144,0.3);
+  overflow: visible;
+}
+
+/* === Rotating Rings === */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid rgba(217, 74, 144, 0.3);
+  box-shadow: 0 0 15px rgba(217,74,144,0.4);
+  animation: rotateRing 20s linear infinite;
+}
+
+#ringO {
+  width: 200px;
+  height: 200px;
+  animation-duration: 25s;
+}
+
+#ringI {
+  width: 150px;
+  height: 150px;
+  border-color: rgba(217, 74, 144, 0.6);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+/* === Clock Hands === */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  background: linear-gradient(to top, #d94a90 0%, #ff78b5 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(217,74,144,0.9);
+}
+
+#handH { width: 4px; height: 45px; }
+#handM { width: 3px; height: 65px; }
+#handS {
+  width: 2px;
+  height: 80px;
+  background: #d94a90;
+  box-shadow: 0 0 20px #d94a90;
+}
+
+/* Center Glow */
+.clock-face::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d94a90;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #d94a90, 0 0 40px #d94a90;
+}
+
+#set-alarm:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 30px rgba(217, 74, 144, 1),
+    0 0 60px rgba(255, 150, 200, 0.6);
+}
+
+/* === Animations === */
+@keyframes rotateRing {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}

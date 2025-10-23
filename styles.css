@@ -1,0 +1,255 @@
+/* ====== General Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  min-height: 100vh;
+  background: #000000;  /* lighter than #0d0d1a */
+  color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #121212;
+    font-family: 'Arial', sans-serif;
+}
+
+.shadow-dance-text {
+    margin-top: 50px;
+    margin-bottom: -50px;
+    font-family:'Press Start 2P';
+    transform: translateY(-80px);
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+    }
+}
+
+/* ====== Main Grid Layout ====== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+}
+
+/* ====== Card Style ====== */
+.card {
+  background: #1e1e1e;
+  height: 500px;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(135, 141, 141, 0.316);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+/*==todo list card selected==*/
+#todo{
+  scrollbar-width: thin;
+  scrollbar-color: rgb(78, 203, 86) rgb(245, 236, 236) ;
+  max-height:500px;
+  overflow-y: auto;
+}
+#todo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(157, 162, 91, 0.285);
+  z-index: 1;
+}
+#calculator:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(139, 91, 162, 0.285);
+  z-index: 1;
+}
+#clock:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(171, 93, 131, 0.285);
+  z-index: 1;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color:rgb(31, 179, 127);
+}
+#two{font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color:#b423cb;
+}
+#one{font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color:#a3a71a;
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color:#d94a90;
+}
+
+
+/* ====== To-Do List ====== */
+.todo-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  outline: none;
+  background: #2a2a2a;
+  color: #f3f8b0;
+}
+
+.todo-input button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  background: linear-gradient(45deg,#cbd90d,#3e9910);
+  color: #0f0f0f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#todo-image{
+  margin-top:60px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  font-family: "Tourney", sans-serif;
+  color: #b7f174;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+ul li:hover {
+  background: #333;
+}
+
+/* ====== Calculator ====== */
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.calculator input {
+  grid-column: span 4;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-align: right;
+  background: #2a2a2a;
+  color: #f49ff3;
+}
+
+.calculator button {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: -2px;
+  width:80px;
+  height:40px;
+  gap: 8px;
+  align-content:  center;
+  padding-bottom: 0.08rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  background: #2a2a2a;
+  color: #bbb6b6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.calculator button:hover {
+  background:#5e066c;
+  color: #0f0f0f;
+}
+
+/* ====== Alarm Clock ====== */
+#alarm-image{
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.alarm-display {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #f991c8;
+}
+
+.alarm-set {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.alarm-set input {
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.alarm-set button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  background: linear-gradient(90deg,#a33781,#dc535e);
+  color: #0f0f0f;
+  font-weight: bold;
+  cursor: pointer;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.100) 1px, transparent 1px),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.100) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
